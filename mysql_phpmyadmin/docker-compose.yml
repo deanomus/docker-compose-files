@@ -1,0 +1,43 @@
+version : '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+      - ./db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - mysqlnet
+    environment:
+      MYSQL_USER: ${mysql_user}
+      MYSQL_PASSWORD: ${mysql_user_pw}
+      MYSQL_ROOT_PASSWORD: ${mysql_root_pw}
+      MYSQL_DATABASE: default_schema
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - mysql
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql:3306
+      PMA_PORT: 3306
+    networks:
+      - mysqlnet
+      - traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.minelast.de`)"
+      - "traefik.http.routers.phpmyadmin.tls=true"
+      - "traefik.http.routers.phpmyadmin.tls.certresolver=lets-encrypt"
+      - "traefik.port=80"
+    restart: always
+
+networks:
+  mysqlnet:
+  traefik_proxy:
+    external:
+      name: traefik_proxy

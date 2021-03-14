@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+    endlessh:
+        image: harshavardhanj/endlessh:latest
+        container_name: endlessh
+        ports:
+        - "22:2222"
+        restart: always

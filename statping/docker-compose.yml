@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  whoami:
+    image: statping/statping:latest
+    container_name: statping
+    networks:
+      - traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.statping.rule=Host(`statping.minelast.de`, `status.minelast.de`)"
+      - "traefik.http.routers.statping.tls=true"
+      - "traefik.http.routers.statping.tls.certresolver=lets-encrypt"
+      - "traefik.port=8080"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./data:/app
+    environment:
+      DB_CONN: sqlite
+    restart: always
+     
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy

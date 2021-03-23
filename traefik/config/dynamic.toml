@@ -10,3 +10,9 @@
   service = "api@internal"
   [http.routers.api.tls]
     certResolver = "lets-encrypt"
+
+
+[tls.options]
+
+  [tls.options.default]
+    minVersion = "VersionTLS12"

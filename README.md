@@ -1,5 +1,12 @@
-# docker-compose-files
-Provides all docker-compose files from main server of minelast.de (dean reinhardt)
+# Docker-Compose-Files
+This repository contains several examples of Docker images using docker-compose.
+As an administrator of a server, I myself use many of the images that are contained here.
+
+## Introduction
+Each folder contains only one piece of software.
+I use Traefik as a reverse proxy for web interfaces, so all docker-compose files are configured for Traefik.
+
+Before use, the .env.example must be copied to .env and configured.
 
 
 ##### Software (Sorted alphabetically)

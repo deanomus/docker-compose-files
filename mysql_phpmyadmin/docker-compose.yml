@@ -7,7 +7,7 @@ services:
     volumes:
       - ./data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "${mysql_outgoing_port}:3306"
     networks:
       - mysqlnet
     environment:
@@ -23,14 +23,14 @@ services:
       - mysql
     container_name: phpmyadmin
     environment:
-      PMA_HOST: mysql:3306
-      PMA_PORT: 3306
+      PMA_HOST: mysql:${mysql_outgoing_port}
+      PMA_PORT: ${mysql_outgoing_port}
     networks:
       - mysqlnet
       - traefik_proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.minelast.de`)"
+      - "traefik.http.routers.phpmyadmin.rule=Host(${domain})"
       - "traefik.http.routers.phpmyadmin.tls=true"
       - "traefik.http.routers.phpmyadmin.tls.certresolver=lets-encrypt"
       - "traefik.port=80"

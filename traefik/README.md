@@ -10,6 +10,10 @@ The advantage over the NGINX is that the Traefik can be controlled via Docker.
    - ```cp .env.example .env```
 2. Configure the .env file:
    - ```vim .env``` or ```nano .env```
+   - Generate Password Hash with following command:
+      - ```htpasswd -nb admin Passwort```
+   - Command not found? It's included in the ```apache2-utils``` package. Install it with:
+      - ```sudo apt-get install apache2-utils```
 3. Create ACME File for lets-encrypt to save certificates:
    - ```touch config/ACME/acme.json```
 4. Set Permissions:

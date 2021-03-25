@@ -5,5 +5,5 @@ services:
         image: harshavardhanj/endlessh:latest
         container_name: endlessh
         ports:
-        - "22:2222"
+        - "${outgoing_port}:2222"
         restart: always

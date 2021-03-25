@@ -13,7 +13,7 @@ services:
       - traefik_proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.bitwarden.rule=Host(`bitwarden.minelast.de`,`vault.minelast.de`)"
+      - "traefik.http.routers.bitwarden.rule=Host(${domain})"
       - "traefik.http.routers.bitwarden.tls=true"
       - "traefik.http.routers.bitwarden.tls.certresolver=lets-encrypt"
       - "traefik.port=80"

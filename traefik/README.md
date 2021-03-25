@@ -6,6 +6,11 @@ The advantage over the NGINX is that the Traefik can be controlled via Docker.
 ![Image of traefik architecture](https://doc.traefik.io/traefik/assets/img/traefik-architecture.png)
 
 ## Setup
-- Copy example env file: ```cp .env.example .env```
-- Create ACME File for lets-encrypt to save certificates: ```touch config/ACME/acme.json```
-- Set Permissions: ```chmod 600 config/ACME/acme.json```
+1. Copy example env file:
+   - ```cp .env.example .env```
+2. Configure the .env file:
+   - ```vim .env``` or ```nano .env```
+2. Create ACME File for lets-encrypt to save certificates:
+   - ```touch config/ACME/acme.json```
+3. Set Permissions:
+   - ```chmod 600 config/ACME/acme.json```

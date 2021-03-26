@@ -3,5 +3,11 @@ This docker image provides a Minecraft Server that will automatically download t
 Currently it is configured for spigot version 1.16.5, to change this, adjust the .env file.
 
 
+## What is spigot?
+Spigot is an open-source Java project that lets users run their own Minecraft server
+and add plugins to extend the possibilities of their server.
+There are over 100,000 Spigot servers in existence today.
+This makes Spigot one of the most stable and diverse Minecraft servers available.
+
 ## Setup
 See subfolders

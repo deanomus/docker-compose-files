@@ -1,4 +1,4 @@
-#[Bitwarden_rs](https://hub.docker.com/r/bitwardenrs/server)
+# [Bitwarden_rs](https://hub.docker.com/r/bitwardenrs/server)
 Bitwarden RS is an unofficial implementation of the Bitwarden password manager
 written in Rust. It uses significantly fewer resources and only requires a single
 docker container to run it.

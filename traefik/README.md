@@ -1,5 +1,6 @@
 # [Treafik](https://doc.traefik.io/traefik/)
-Traefik is a reverse proxy (like [NGINX Reverse Proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)) and configures itself almost completely automatically.
+Traefik is a reverse proxy (like [NGINX Reverse Proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/))
+and configures itself almost completely automatically.
 It also automatically creates and renews SSL certificates.
 The advantage over the NGINX is that the Traefik can be controlled via Docker.
 

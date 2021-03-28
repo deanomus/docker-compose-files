@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  wordpress:
+    image: wordpress:${image_tag}
+    container_name: wordpress
+    networks:
+      - traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wordpress.rule=Host(${domain})"
+      - "traefik.http.routers.wordpress.tls=true"
+      - "traefik.http.routers.wordpress.tls.certresolver=lets-encrypt"
+      - "traefik.port=80"
+    environment:
+      WORDPRESS_DEBUG: "true"
+      WORDPRESS_DB_HOST: ${db_host}:${db_port}
+      WORDPRESS_DB_USER: ${db_user}
+      WORDPRESS_DB_NAME: ${db_name}
+      WORDPRESS_DB_PASSWORD: ${db_password}
+    volumes:
+      - ./data:/var/www/html/
+    restart: always
+     
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy

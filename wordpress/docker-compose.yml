@@ -13,7 +13,6 @@ services:
       - "traefik.http.routers.wordpress.tls.certresolver=lets-encrypt"
       - "traefik.port=80"
     environment:
-      WORDPRESS_DEBUG: "true"
       WORDPRESS_DB_HOST: ${db_host}:${db_port}
       WORDPRESS_DB_USER: ${db_user}
       WORDPRESS_DB_NAME: ${db_name}

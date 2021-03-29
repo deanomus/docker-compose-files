@@ -15,7 +15,7 @@ the solution on-premises.
 
 
 ## ⚠️**IMPORTANT**⚠️
-When using this server, please report any bugs or suggestions to [bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) directly,
+If you using this server, please report any bugs or suggestions to [bitwarden_rs](https://github.com/dani-garcia/bitwarden_rs) directly,
 regardless of whatever clients you are using (mobile, desktop, browser...).
 DO NOT use the official support channels.
 

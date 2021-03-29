@@ -1,12 +1,13 @@
 services:
   mc:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:${image_tag}
     container_name: mc_testserver
     ports:
-      - 25566:25565
+      - ${outgoing_port}:25565
     environment:
       EULA: "TRUE"
-      TYPE: SPIGOT
+      TYPE: ${server_type}
+      VERSION: ${server_version}
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ./data/:/data

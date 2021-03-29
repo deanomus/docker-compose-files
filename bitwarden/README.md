@@ -25,3 +25,5 @@ DO NOT use the official support channels.
    - ```cp .env.example .env```
 2. Configure the .env file:
    - ```vim .env``` or ```nano .env```
+3. Create data folder
+   - ```mkdir data```

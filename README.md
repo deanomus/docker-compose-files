@@ -21,6 +21,7 @@ Name | Source/Link | Date
 [Statping](#statping) | [Docker-Hub](https://hub.docker.com/r/hunterlong/statping) , [GitHub](https://github.com/statping/statping) | 18.03.2021
 [Traefik](#traefik) | [Docker-Hub](https://hub.docker.com/_/traefik) , [Docs](https://doc.traefik.io/traefik/) | 04.03.2021
 [Whoami](#whoami) | [Docker-Hub](https://hub.docker.com/r/containous/whoami) , [GitHub](https://github.com/traefik/whoami) | 04.03.2021
+[Wordpress](#wordpress) | [Docker-Hub](https://hub.docker.com/_/wordpress) | 28.03.2021
 
 
 ## About contained software
@@ -90,8 +91,19 @@ and configures itself almost completely automatically.
 It also automatically creates and renews SSL certificates.
 The advantage over the NGINX is that the Traefik can be controlled via Docker.
 
+
 <br><br>
 <a name="whoami"></a>
-<img align="right" width="320" src="https://image.winudf.com/v2/image1/Y29tLnN0YXRwaW5nX3NjcmVlbl84XzE1NTUxMTM3MjVfMDgz/screen-8.jpg?fakeurl=1&type=.jpg">
-## [Whoami](https://user-images.githubusercontent.com/26530975/27141029-64954410-5127-11e7-87a0-83a87157cfff.png)
+<img align="right" width="320" src="https://user-images.githubusercontent.com/26530975/27141029-64954410-5127-11e7-87a0-83a87157cfff.png">
+## [Whoami](https://github.com/deanomus/docker-compose-files/tree/main/whoami)
 Whoami is a tiny Go webserver that prints os information and HTTP request to output
+
+
+<br><br>
+<a name="wordpress"></a>
+<img align="left" width="320" src="https://www.pachnerweb.at/pachnerweb/wp-content/uploads/2019/06/WordPress-logotype-alternative.png">
+## [Wordpress](https://github.com/deanomus/docker-compose-files/tree/main/wordpress)
+WordPress is open source software that you can use to create a beautiful website, blog, or app.
+On a slightly more technical level, WordPress is an open source content management system
+that is licensed under the GPLv2.
+This means that anyone can use or change the WordPress software for free.

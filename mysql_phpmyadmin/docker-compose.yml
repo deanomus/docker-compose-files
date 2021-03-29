@@ -2,12 +2,12 @@ version : '3'
 
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:${mysql_image_tag}
     container_name: mysql
     volumes:
       - ./data:/var/lib/mysql
     ports:
-      - "${mysql_outgoing_port}:3306"
+      - ${mysql_outgoing_port}:3306
     networks:
       - mysqlnet
     environment:
@@ -15,10 +15,10 @@ services:
       MYSQL_PASSWORD: ${mysql_user_pw}
       MYSQL_ROOT_PASSWORD: ${mysql_root_pw}
       MYSQL_DATABASE: default_schema
-    restart: always
+    restart: unless-stopped
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:${pma_image_tag}
     depends_on:
       - mysql
     container_name: phpmyadmin
@@ -34,7 +34,7 @@ services:
       - "traefik.http.routers.phpmyadmin.tls=true"
       - "traefik.http.routers.phpmyadmin.tls.certresolver=lets-encrypt"
       - "traefik.port=80"
-    restart: always
+    restart: unless-stopped
 
 networks:
   mysqlnet:

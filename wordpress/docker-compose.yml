@@ -19,8 +19,8 @@ services:
       WORDPRESS_DB_PASSWORD: ${db_password}
     volumes:
       - ./data:/var/www/html/
-    restart: always
-     
+    restart: unless-stopped
+
 networks:
   traefik_proxy:
     external:

@@ -15,7 +15,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - ./data:/app
+      - ${data_folder}:/app
     environment:
       DB_CONN: sqlite
     restart: unless-stopped

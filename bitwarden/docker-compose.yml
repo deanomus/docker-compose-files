@@ -4,7 +4,7 @@ services:
   bitwarden:
     image: bitwardenrs/server:${image_tag}
     volumes:
-      - ./data:/data
+      - ${data_folder}:/data
     environment:
       WEBSOCKET_ENABLED: ${websocket}
       SIGNUPS_ALLOWED: ${signups}   # set to false to disable signups

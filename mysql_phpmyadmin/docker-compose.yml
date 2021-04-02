@@ -5,7 +5,7 @@ services:
     image: mysql:${mysql_image_tag}
     container_name: mysql
     volumes:
-      - ./data:/var/lib/mysql
+      - ${data_folder}:/var/lib/mysql
     ports:
       - ${mysql_outgoing_port}:3306
     networks:

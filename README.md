@@ -1,6 +1,6 @@
 # Docker-Compose-Files
 This repository contains several examples of Docker images using docker-compose.
-As an administrator of a server, I myself use many of the images that are contained here.
+As an administrator of a server, by myself I use many of the images that are contained here.
 
 ## Introduction
 Each folder contains only one piece of software.

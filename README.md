@@ -16,6 +16,7 @@ Name | Source/Link | Date
 [Bitwarden_rs](#bitwarden_rs) | [Docker-Hub](https://hub.docker.com/r/bitwardenrs/server) , [GitHub](https://github.com/dani-garcia/bitwarden_rs) | 08.03.2021
 [Endlessh](#endlessh) | [Docker-Hub](https://hub.docker.com/r/harshavardhanj/endlessh) | 14.03.2021
 [LOK_RestAPI (WIP)](#lok) | [GitHub](https://github.com/Laufen-oder-Kaufen/LOK_RestAPI) | 11.03.2021
+[Minio](#minio) | [Docker-Hub](https://hub.docker.com/r/minio/minio/) , [GitHub](https://github.com/minio/minio) | 05.04.2021
 [MySQL & phpmyadmin](#mysql) | [MySQL Docker-Hub](https://hub.docker.com/_/mysql) , [phpmyadmin Docker-Hub](https://hub.docker.com/r/phpmyadmin/phpmyadmin/) | 08.03.2021
 [Spigot Server](#spigot) | [Docker-Hub](https://hub.docker.com/r/itzg/minecraft-server) , [GitHub](https://github.com/itzg/docker-minecraft-server) | 14.03.2021
 [Statping](#statping) | [Docker-Hub](https://hub.docker.com/r/hunterlong/statping) , [GitHub](https://github.com/statping/statping) | 18.03.2021
@@ -55,8 +56,17 @@ This is an education project from Europaschule Schulzentrum Utbremen and is stil
 
 
 <br><br>
+<a name="minio"></a>
+<img align="right" width="320" src="https://sloppy.io/wp-content/uploads/2017/01/browser.png">
+## [Minio](https://github.com/deanomus/docker-compose-files/tree/main/minio)
+MinIO is an [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3) compatible object storage suite capable of
+handling structured and unstructured data including log files, artifacts, backups, container images,
+photos and videos.
+
+
+<br><br>
 <a name="mysql"></a>
-<img align="right" width="320" src="https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png">
+<img align="left" width="320" src="https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png">
 ## [MySQL & phpmyadmin](https://github.com/deanomus/docker-compose-files/tree/main/mysql_phpmyadmin)
 MySQL Server with phpmyadmin as web interface to manage databases.
 Find more information [here](https://github.com/deanomus/docker-compose-files/tree/main/mysql_phpmyadmin/README.md).
@@ -64,7 +74,7 @@ Find more information [here](https://github.com/deanomus/docker-compose-files/tr
 
 <br><br>
 <a name="spigot"></a>
-<img align="left" width="320" src="https://i.ytimg.com/vi/-wm5IS7GWwM/maxresdefault.jpg">
+<img align="right" width="320" src="https://i.ytimg.com/vi/-wm5IS7GWwM/maxresdefault.jpg">
 ## Spigot [Game](https://github.com/deanomus/docker-compose-files/tree/main/spigotserver/gameserver) & [Test](https://github.com/deanomus/docker-compose-files/tree/main/spigotserver/testserver) Server
 This docker image provides a Minecraft Server with Spigot that will
 automatically download the latest stable version at startup.
@@ -74,7 +84,7 @@ Minecraft server and add plugins to extend the possibilities of their server.
 
 <br><br>
 <a name="statping"></a>
-<img align="right" width="320" src="https://image.winudf.com/v2/image1/Y29tLnN0YXRwaW5nX3NjcmVlbl84XzE1NTUxMTM3MjVfMDgz/screen-8.jpg?fakeurl=1&type=.jpg">
+<img align="left" width="320" src="https://image.winudf.com/v2/image1/Y29tLnN0YXRwaW5nX3NjcmVlbl84XzE1NTUxMTM3MjVfMDgz/screen-8.jpg?fakeurl=1&type=.jpg">
 ## [Statping](https://github.com/deanomus/docker-compose-files/tree/main/statping)
 Statping is a easy to use Status Page for your websites and applications.
 Statping will automatically fetch the application and render a beautiful
@@ -84,7 +94,7 @@ This Status Page generator allows you to use MySQL, Postgres, or SQLite on multi
 
 <br><br>
 <a name="traefik"></a>
-<img align="left" width="320" src="https://doc.traefik.io/traefik/assets/img/traefik-architecture.png">
+<img align="right" width="320" src="https://doc.traefik.io/traefik/assets/img/traefik-architecture.png">
 [Traefik](https://github.com/deanomus/docker-compose-files/tree/main/traefik)
 Traefik is a reverse proxy (like [NGINX Reverse Proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/))
 and configures itself almost completely automatically.
@@ -94,14 +104,14 @@ The advantage over the NGINX is that the Traefik can be controlled via Docker.
 
 <br><br>
 <a name="whoami"></a>
-<img align="right" width="320" src="https://user-images.githubusercontent.com/26530975/27141029-64954410-5127-11e7-87a0-83a87157cfff.png">
+<img align="left" width="320" src="https://user-images.githubusercontent.com/26530975/27141029-64954410-5127-11e7-87a0-83a87157cfff.png">
 ## [Whoami](https://github.com/deanomus/docker-compose-files/tree/main/whoami)
 Whoami is a tiny Go webserver that prints os information and HTTP request to output
 
 
 <br><br>
 <a name="wordpress"></a>
-<img align="left" width="320" src="https://www.pachnerweb.at/pachnerweb/wp-content/uploads/2019/06/WordPress-logotype-alternative.png">
+<img align="right" width="320" src="https://www.pachnerweb.at/pachnerweb/wp-content/uploads/2019/06/WordPress-logotype-alternative.png">
 ## [Wordpress](https://github.com/deanomus/docker-compose-files/tree/main/wordpress)
 WordPress is open source software that you can use to create a beautiful website, blog, or app.
 On a slightly more technical level, WordPress is an open source content management system

@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  minio:
+    image: minio/minio:${image_tag}
+    container_name: minio
+    networks:
+      - traefik_proxy
+    volumes:
+      - ${data_folder}:/data
+    environment:
+      MINIO_ROOT_USER: ${root_user}
+      MINIO_ROOT_PASSWORD: ${root_password}
+    ports:
+      - "9000:9000"
+    command: server /data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.minio.rule=Host(${domain})"
+      - "traefik.http.routers.minio.tls=true"
+      - "traefik.http.routers.minio.tls.certresolver=lets-encrypt"
+      - "traefik.port=9000"
+    restart: always
+     
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy

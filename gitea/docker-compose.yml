@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  gitea:
+    image: gitea/gitea:${image_tag}
+    container_name: gitea
+    networks:
+      - traefik_proxy
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - DB_TYPE=mysql
+      - DB_HOST=${db_host}
+      - DB_NAME=${db_name}
+      - DB_USER=${db_user}
+      - DB_PASSWD=${db_password}
+      - DOMAIN=${main_domain}
+      - APP_NAME=${app_name}
+      - SSH_DOMAIN=${main_domain}
+      - SSH_PORT=${outgoing_ssh_port}
+      - DISABLE_REGISTRATION=${disable_registration}
+      - REQUIRE_SIGNIN_VIEW=${require_signin} 
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.gitea.rule=Host(${domain})"
+      - "traefik.http.routers.gitea.tls=true"
+      - "traefik.http.routers.gitea.tls.certresolver=lets-encrypt"
+      - "traefik.http.services.gitea.loadbalancer.server.port=3000"
+    volumes:
+      - ${data_folder}:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "${outgoing_ssh_port}:22"
+    restart: unless-stopped
+     
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy

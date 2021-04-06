@@ -2,3 +2,4 @@
 *acme.json
 *.env
 *data
+*.log

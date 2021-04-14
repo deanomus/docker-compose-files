@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  wallabag:
+    image: wallabag/wallabag:${image_tag}
+    container_name: wallabag
+    environment:
+      # - MYSQL_ROOT_PASSWORD=wallaroot
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
+      - SYMFONY__ENV__DATABASE_HOST=${db_host}
+      - SYMFONY__ENV__DATABASE_PORT=${db_port}
+      - SYMFONY__ENV__DATABASE_NAME=${db_database}
+      - SYMFONY__ENV__DATABASE_USER=${db_user}
+      - SYMFONY__ENV__DATABASE_PASSWORD=${db_password}
+      - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
+      - SYMFONY__ENV__DOMAIN_NAME=${domain_url}
+      - SYMFONY__ENV__SERVER_NAME=${server_name}
+    volumes:
+      - ${data_folder}:/var/www/wallabag/web/assets/images
+    networks:
+      - traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wallabag.rule=Host(${domain})"
+      - "traefik.http.routers.wallabag.tls=true"
+      - "traefik.http.routers.wallabag.tls.certresolver=lets-encrypt"
+      - "traefik.port=80"
+    restart: unless-stopped
+
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy

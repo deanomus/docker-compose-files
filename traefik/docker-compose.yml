@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   traefik:
-    image: traefik:2.3
+    image: traefik:${image_tag}
     container_name: traefik
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -23,7 +23,7 @@ services:
     #   - "traefik.http.routers.traefik.service=api@internal"
     #   - "traefik.http.routers.traefik.middlewares=auth@docker"
     #   - "traefik.http.middlewares.auth.basicauth.users=admin:$$2y$$05$$WRY.tBGQyuJWyhTsjvExe.6XVLaQVCZkxmI6JiMR44uKGjGEcO.tO"
-    restart: always
+    restart: unless-stopped
 
 networks:
   traefik_proxy:

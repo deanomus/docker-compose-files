@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
     endlessh:
-        image: harshavardhanj/endlessh:latest
+        image: harshavardhanj/endlessh:${image_tag}
         container_name: endlessh
         ports:
-        - "22:2222"
-        restart: always
+        - "${outgoing_port}:2222"
+        restart: unless-stopped

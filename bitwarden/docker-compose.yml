@@ -2,9 +2,9 @@ version: '3'
 
 services:
   bitwarden:
-    image: bitwardenrs/server:latest
+    image: bitwardenrs/server:${image_tag}
     volumes:
-      - ./data:/data
+      - ${data_folder}:/data
     environment:
       WEBSOCKET_ENABLED: ${websocket}
       SIGNUPS_ALLOWED: ${signups}   # set to false to disable signups
@@ -13,13 +13,13 @@ services:
       - traefik_proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.bitwarden.rule=Host(`bitwarden.minelast.de`,`vault.minelast.de`)"
+      - "traefik.http.routers.bitwarden.rule=Host(${domain})"
       - "traefik.http.routers.bitwarden.tls=true"
       - "traefik.http.routers.bitwarden.tls.certresolver=lets-encrypt"
       - "traefik.port=80"
-    restart: always
+    restart: unless-stopped
 
-     
+
 networks:
   traefik_proxy:
     external:

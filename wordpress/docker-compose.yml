@@ -12,6 +12,7 @@ services:
       - "traefik.http.routers.wordpress.tls=true"
       - "traefik.http.routers.wordpress.tls.certresolver=lets-encrypt"
       - "traefik.port=80"
+      - "docker-volume-backup.stop-during-backup=true"
     environment:
       WORDPRESS_DB_HOST: ${db_host}:${db_port}
       WORDPRESS_DB_USER: ${db_user}

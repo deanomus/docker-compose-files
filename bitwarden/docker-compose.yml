@@ -17,6 +17,7 @@ services:
       - "traefik.http.routers.bitwarden.tls=true"
       - "traefik.http.routers.bitwarden.tls.certresolver=lets-encrypt"
       - "traefik.port=80"
+      - "docker-volume-backup.stop-during-backup=true"
     restart: unless-stopped
 
 

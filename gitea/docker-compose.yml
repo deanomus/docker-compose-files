@@ -26,6 +26,7 @@ services:
       - "traefik.http.routers.gitea.tls=true"
       - "traefik.http.routers.gitea.tls.certresolver=lets-encrypt"
       - "traefik.http.services.gitea.loadbalancer.server.port=3000"
+      - "docker-volume-backup.stop-during-backup=true"
     volumes:
       - ${data_folder}:/data
       - /etc/timezone:/etc/timezone:ro

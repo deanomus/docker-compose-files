@@ -8,6 +8,8 @@ services:
       EULA: "TRUE"
       TYPE: ${server_type}
       VERSION: ${server_version}
+    labels:
+      - "docker-volume-backup.stop-during-backup=true"
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ${data_folder}:/data

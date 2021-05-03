@@ -20,6 +20,7 @@ services:
       - "traefik.http.routers.minio.tls=true"
       - "traefik.http.routers.minio.tls.certresolver=lets-encrypt"
       - "traefik.port=9000"
+      - "docker-volume-backup.stop-during-backup=true"
     restart: always
      
 networks:

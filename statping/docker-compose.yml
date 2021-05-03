@@ -12,6 +12,7 @@ services:
       - "traefik.http.routers.statping.tls=true"
       - "traefik.http.routers.statping.tls.certresolver=lets-encrypt"
       - "traefik.port=8080"
+      - "docker-volume-backup.stop-during-backup=true"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro

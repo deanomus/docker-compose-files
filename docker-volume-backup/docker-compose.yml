@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  backup:
+    container_name: docker_backup
+    image: futurice/docker-volume-backup
+    environment:
+      AWS_S3_BUCKET_NAME: ${AWS_BUCKET}      # S3 bucket which you own, and already exists
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}   # Read AWS secrets from environment (or a .env file)
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      BACKUP_FILENAME: latest-%Y.tar.gz
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/docker/bitwarden:/backup/bitwarden:ro
+      - /var/docker/gitea:/backup/gitea:ro
+      - /var/docker/minio:/backup/minio:ro
+      - /var/docker/mysql_phpmyadmin:/backup/mysql:ro
+      - /var/docker/spigotserver:/backup/spigotserver:ro
+      - /var/docker/statping:/backup/statping:ro
+      - /var/docker/traefik:/backup/traefik:ro
+      - /var/docker/wordpress:/backup/wordpress:ro
+

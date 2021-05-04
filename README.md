@@ -43,7 +43,7 @@ It also allows the use of the normally paid features like organisations and repo
 <br><br>
 <a name="d-v-b"></a>
 <img align="right" width="320" src="https://minio.minelast.de/images/docker-volume-backups.jpeg">
-## [Bitwarden rs](https://github.com/deanomus/docker-compose-files/tree/main/docker-volume-backup)
+## [Docker-volume-backup](https://github.com/deanomus/docker-compose-files/tree/main/docker-volume-backup)
 Docker-volume-backup is an Docker image for performing simple backups of Docker volumes. Main features:
 
 - Mount volumes into the container, and they'll get backed up

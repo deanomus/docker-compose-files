@@ -15,7 +15,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    # labels:
+    labels:
     #   - "traefik.enable=true"
     #   - "traefik.http.routers.traefik.rule=Host(`traefik.minelast.de`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
     #   - "traefik.http.routers.traefik.entrypoints=web-secure"
@@ -23,6 +23,7 @@ services:
     #   - "traefik.http.routers.traefik.service=api@internal"
     #   - "traefik.http.routers.traefik.middlewares=auth@docker"
     #   - "traefik.http.middlewares.auth.basicauth.users=admin:$$2y$$05$$WRY.tBGQyuJWyhTsjvExe.6XVLaQVCZkxmI6JiMR44uKGjGEcO.tO"
+      - "docker-volume-backup.stop-during-backup=true"
     restart: unless-stopped
 
 networks:

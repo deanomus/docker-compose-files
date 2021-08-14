@@ -7,9 +7,12 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: ${server_type}
-      VERSION: ${server_version}
+      SPIGOT_DOWNLOAD_URL: ${spigot_url}
     labels:
       - "docker-volume-backup.stop-during-backup=true"
     volumes:
       # attach the relative directory 'data' to the container's /data path
       - ${data_folder}:/data
+    # enables console, use: docker attach <DOCKER-CONTAINER> 
+    stdin_open: true
+    tty: true

@@ -19,4 +19,4 @@ services:
       - /var/docker/statping:/backup/statping:ro
       - /var/docker/traefik:/backup/traefik:ro
       - /var/docker/wordpress:/backup/wordpress:ro
-
+      - /var/docker/xbackbone:/backup/xbackbone:ro

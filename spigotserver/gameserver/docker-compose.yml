@@ -8,6 +8,7 @@ services:
       EULA: "TRUE"
       TYPE: ${server_type}
       SPIGOT_DOWNLOAD_URL: ${spigot_url}
+      MEMORY: ${server_memory}
     labels:
       - "docker-volume-backup.stop-during-backup=true"
     volumes:

@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  xbackbone:
+    image: pe46dro/xbackbone-docker:${image_tag}
+    container_name: xbackbone
+    networks:
+      - traefik_proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.xbackbone.rule=Host(${domain})"
+      - "traefik.http.routers.xbackbone.tls=true"
+      - "traefik.http.routers.xbackbone.tls.certresolver=lets-encrypt"
+      - "traefik.http.services.xbackbone-xbackbone.loadbalancer.server.port=80"
+      - "docker-volume-backup.stop-during-backup=true"
+    environment:
+      APP_NAME: ${app_name}
+      URL: ${url}
+    volumes:
+      - ${data_folder}/storage/:/app/storage
+      - ${data_folder}/resources/database:/app/resources/database
+      - ${data_folder}/logs:/app/logs
+      - ${data_folder}/config:/app/config
+    restart: unless-stopped
+
+networks:
+  traefik_proxy:
+    external:
+      name: traefik_proxy
